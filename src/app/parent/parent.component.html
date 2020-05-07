@@ -1,0 +1,9 @@
+<p>parent works!</p>
+<div>
+    <button (click)="userloggedin=true">login</button>
+    <button (click)="userloggedin=false">logout</button>
+</div>
+<app-childcomp (greetEvent)="greet($event)" #child [loggedin]="userloggedin"></app-childcomp>
+ {{child.name}}
+
+ 

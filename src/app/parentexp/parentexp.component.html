@@ -1,0 +1,21 @@
+<!-- <p>parentexp works!</p>
+<app-childexp (sendData)='my_fun($event)'
+[p_id]='x.p_id'
+[p_name]='x.p_name'
+[p_cost]='x.p_cost'
+*ngFor="let x of my_array"
+[name1]='name' >
+</app-childexp>
+
+<app-childexp></app-childexp>
+<app-childexp></app-childexp>
+ -->
+ <p>parent works!</p>
+ <input type="file" name="file" (change)="fileupload($event)">
+ <app-childexp></app-childexp>
+ <app-childexp></app-childexp>
+ <app-childexp></app-childexp>
+ <button (click)="clickMe()">change</button>
+ <input type="text" (keypress)="Onkeypress($event)" [(ngModel)]="names">
+<!-- //<input type="text" (input)="onchange($event.target.value)"> -->
+ <!-- <button (click)=clickMe()”>change</button> -->

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <p>Check whether given number is Palindrome or not</p>
+    <br>
+    <input type="text" class="form-control" id="num">
+
+    <button onclick="myFunction()">Submit</button>
+
+
+    <script>
+        //1. check given number is palindrome or not
+        function myFunction() {
+            var reminder, temp, final = 0;
+            var number = document.getElementById("num").value;
+            temp = number;
+            while (number > 0) {
+
+                reminder = number % 10;
+                number = parseInt(number / 10);
+                final = final * 10 + reminder;
+            }
+            if (final == temp) {
+                window.alert(" number is Palindrome");
+            }
+            else {
+                window.alert(" number is not palindrome");
+            }
+        }
+        //2.Add the palindrome numbers in array
+        var myarray = [121, 123, 20, 131];
+        var Palindromecount = 0;
+        var nonPalindromecount = 0;
+        for (var i = 0; i < myarray.length; i++) {
+            var reminder, temp, final = 0;
+            var number = myarray[i];
+            temp = number;
+            while (number > 0) {
+
+                reminder = number % 10;
+                number = parseInt(number / 10);
+                final = final * 10 + reminder;
+            }
+            if (final == temp) {
+                Palindromecount = Palindromecount + myarray[i];
+
+            }
+            else {
+                nonPalindromecount = nonPalindromecount + myarray[i];
+
+            }
+        }
+        
+        console.log("Palindrome count is" + " " + Palindromecount);
+        console.log("NonPalindrome count is" + " " + nonPalindromecount);
+    </script>
+
+</body>
+
+</html>

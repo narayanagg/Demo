@@ -1,0 +1,61 @@
+<div class="container">
+    <form [formGroup]="Employee" (ngSubmit)="Register()">
+        <div class="form-group">
+            <label>First Name</label>
+            <input type="text" class="form-control" formControlName="fname"/>
+            <div *ngIf="Employee.controls['fname'].errors">
+                <span *ngIf="Employee.controls['fname'].errors.required" class="text-danger "> Required Name</span>
+            </div>
+            <!-- <span *ngIf="Employee.get('fname').errors?.required" class="tex
+                t-danger ">fname cannot blank</span> -->
+            <!-- <span *ngIf="Employee.controls['fname'].errors.minlength" class="text-danger ">min 3 char required</span> -->
+        </div>
+       
+        <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" class="form-control" formControlName="lname"/>
+            <div *ngIf="Employee.controls['lname'].errors">
+                <span *ngIf="Employee.controls['lname'].errors.minlength" class="text-danger ">min 3 char required</span>
+            </div>
+            
+        </div>
+        <div class="form-group">
+            <label>Email</label>
+            <input type="email" class="form-control" formControlName="email"/>
+        </div>
+        <div class="form-group">
+            <label>Photo</label>
+            <input type="file" class="form-control" formControlName="photo" (change)="fileupload($event)"/>
+        </div>
+        <!-- <div class="form-group">
+            <label>Languages</label>
+            <input type="radio" class="form-control" formControlName="lang" value="hi"/> <b>Hindi</b>
+            <input type="radio" class="form-control" formControlName="lang" value="en"/> <b>English</b>
+        </div>
+       
+            <div class="form-group">
+                <select formControlName="City">
+                <option value="vij">vij</option>
+                <option value="hyd">hyd</option>
+                <option value="gunt">gunt</option>
+            </select>
+            </div>
+            <div class="form-group">
+                <input type="checkbox" formControlName="IsActive">IsActive
+            </div>
+            <div class="form-group" formGroupName="Skills">
+                <div class="form-group">
+                    <input type="radio" class="form-control" formControlName="ln" value="hi"/> <b>Hindi</b>
+                    <input type="radio" class="form-control" formControlName="ln" value="en"/> <b>English</b>
+                </div>
+            </div> -->
+            <div class="form-group">
+
+            <input type="submit"/>
+          
+        </div>
+    </form>
+    <input type="text" [ngModel]="names" (ngModelChange)="Onchenge($event)"> 
+    <br>
+    <input type="text" (input)="onc($event)">
+</div>
